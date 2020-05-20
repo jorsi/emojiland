@@ -34,12 +34,12 @@ export class TerminalComponent extends Component {
     if (e.ctrlKey || e.altKey || e.metaKey) {
         // do command
     } else {
-        this.onKey(e.key);
+        this.onKey(e.key, e);
     }
   }
   onKeyUp (e: KeyboardEvent) {}
 
-  onKey (key: string) {
+  onKey (key: string, e: KeyboardEvent) {
     if (key === 'ArrowUp') {
       this.prevHistory();
     }
@@ -47,6 +47,7 @@ export class TerminalComponent extends Component {
       this.nextHistory();
     }
     if (key === 'Backspace') {
+      e.preventDefault(); // prevents browser from leaving page
       this.value = this.value.slice(0, -1);
     }
     if (key === 'Enter') {
