@@ -139,11 +139,16 @@ export class WorldModule {
   }
   onClientSpeech (client: Client, speech: string) {
     console.log(speech);
-    // get entity
-    // check if entity can perform action
-    switch (speech) {
+
+    const words = speech.split(' ');
+    if (words.length === 0) return;
+
+    let command = words.shift();
+    switch (command) {
       case '/generate':
-        this.onCreate();
+        let seed = words.join(' ');
+        this.destroy();
+        this.onCreate(seed);
         break;
       case '/destroy':
         this.destroy();
