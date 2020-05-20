@@ -94,4 +94,4 @@ export class WorldComponent extends WorldElement {
         this.renderer.setSize(this.width, this.height);
     }
 }
-customElements.define('reverie-world', WorldComponent);
+customElements.define('emojiland-world', WorldComponent);

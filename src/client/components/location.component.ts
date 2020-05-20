@@ -70,4 +70,4 @@ export class LocationComponent extends WorldElement {
         // this.style.zIndex = this.location.z + '';
     }
 }
-customElements.define('reverie-location', LocationComponent);
+customElements.define('emojiland-location', LocationComponent);

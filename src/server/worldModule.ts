@@ -1,4 +1,4 @@
-import { Reverie } from './reverie';
+import { Emojiland } from './emojiland';
 import { EventChannel } from '../common/services/eventChannel';
 import { EntityManager } from './world/entityManager';
 import { World, WorldState, WorldRegion, WorldLocation, Tile } from '../common/models';
@@ -7,7 +7,7 @@ import { MapManager } from './world/mapManager';
 import { Client } from './client';
 
 export class WorldModule {
-  reverie: Reverie;
+  emojiland: Emojiland;
   events: EventChannel;
   model: World | void;
   maps: MapManager;
@@ -25,8 +25,8 @@ export class WorldModule {
   isUpdating = false;
   isPaused = false;
 
-  constructor (reverie: Reverie) {
-    const events = this.events = reverie.events;
+  constructor (emojiland: Emojiland) {
+    const events = this.events = emojiland.events;
     this.entities = new EntityManager(this);
     this.maps = new MapManager(this);
 
@@ -49,7 +49,7 @@ export class WorldModule {
   }
 
   // Eventing Routes
-  onCreate (seed: string = 'reverie') {
+  onCreate (seed: string = 'emojiland') {
     // get entity
     // get current world
     // if entity can create world, and world doesn't exist, create world

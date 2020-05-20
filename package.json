@@ -1,10 +1,10 @@
 {
-  "name": "reverie",
+  "name": "emojiland",
   "version": "0.0.2",
   "description": "An experiment in online worlds.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jorsi/reverie.git"
+    "url": "https://github.com/jorsi/emojiland.git"
   },
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "build": "npm run tslint && npm run build-ts && npm run build-client",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "build-ts": "tsc",
-    "build-client": "npm run copy && browserify ./dist/client/client.js > ./dist/public/js/reverie.js",
+    "build-client": "npm run copy && browserify ./dist/client/client.js > ./dist/public/js/emojiland.js",
     "serve": "node dist/index.js",
     "clean": "node scripts/clean.js",
     "copy": "node scripts/copy-static.js"

@@ -110,4 +110,4 @@ export class TerminalComponent extends Component {
     this.style.width = width + 'px';
   }
 }
-customElements.define('reverie-terminal', TerminalComponent);
+customElements.define('emojiland-terminal', TerminalComponent);

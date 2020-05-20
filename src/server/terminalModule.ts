@@ -1,6 +1,6 @@
 import { ScriptLoader } from '../common/utils/scriptLoader';
 import { EventChannel } from '../common/services/eventChannel';
-import { Reverie } from './reverie';
+import { Emojiland } from './emojiland';
 
 /**
  * Base Command class for creating terminal commands.
@@ -23,7 +23,7 @@ export class TerminalModule {
     private output: NodeJS.WriteStream;
     private inputBuffer: (string | Buffer)[] = [];
 
-    constructor(reverie: Reverie, options?: any) {
+    constructor(emojiland: Emojiland, options?: any) {
         if (process.stdin.isTTY) {
             process.stdin.setEncoding('utf8');
             process.stdin.on('data', (chunk) => {

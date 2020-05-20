@@ -1,4 +1,4 @@
-// Reverie client
+// Emojiland client
 // Created by Jonathon Orsi
 import { EventChannel } from '../common/services/eventChannel';
 import { WorldModule } from './worldModule';
@@ -66,6 +66,6 @@ export class Client {
 }
 document.addEventListener('DOMContentLoaded', function() {
   // initial run
-  let reverie = new Client();
-  reverie.run();
+  let emojiland = new Client();
+  emojiland.run();
 }, false);

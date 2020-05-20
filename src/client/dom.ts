@@ -16,7 +16,7 @@ export class DOMRenderer {
         let events = this.events = client.events;
 
         // html setup
-        this.root = <Element>document.querySelector('#reverie');
+        this.root = <Element>document.querySelector('#emojiland');
 
         // general browser events
         window.addEventListener('resize',       (e: Event) => this.onWindowResize(e));

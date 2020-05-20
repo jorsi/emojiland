@@ -3,11 +3,11 @@ import * as express from 'express';
 import * as io from 'socket.io';
 import * as path from 'path';
 
-import { Reverie } from './reverie';
+import { Emojiland } from './emojiland';
 import { EventChannel } from '../common/services/eventChannel';
 
 export class NetworkModule {
-  reverie: Reverie;
+  emojiland: Emojiland;
   publicDirectory: string;
   httpServer: http.Server;
   app: express.Application;
@@ -15,9 +15,9 @@ export class NetworkModule {
   sockets: SocketIO.Socket[] = [];
   events: EventChannel;
 
-  constructor (reverie: Reverie) {
-    const events = this.events = reverie.events;
-    this.publicDirectory = path.join(reverie.rootDirectory, '../public');
+  constructor (emojiland: Emojiland) {
+    const events = this.events = emojiland.events;
+    this.publicDirectory = path.join(emojiland.rootDirectory, '../public');
 
     // create express application
     this.app = express();

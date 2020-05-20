@@ -73,4 +73,4 @@ export class EntityComponent extends WorldElement {
         }
     }
 }
-customElements.define('reverie-entity', EntityComponent);
+customElements.define('emojiland-entity', EntityComponent);

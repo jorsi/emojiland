@@ -1,7 +1,7 @@
 /**
- * Event Manager for Reverie.
+ * Event Manager for Emojiland.
  * This class acts as a communications channel
- * between multiple Reverie modules.
+ * between multiple Emojiland modules.
  */
 export class EventChannel {
   queue: { event: string; data?: any; }[] = [];

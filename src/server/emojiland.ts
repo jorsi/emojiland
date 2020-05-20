@@ -8,8 +8,8 @@ import { WorldModule } from './worldModule';
 import { ScriptLoader } from '../common/utils/scriptLoader';
 import { TimerManager } from '../common/utils/timerManager';
 
-export class Reverie {
-    public static instance: Reverie;
+export class Emojiland {
+    public static instance: Emojiland;
     readonly version = {
         major: 0,
         minor: 0,
@@ -34,7 +34,7 @@ export class Reverie {
     deltas: number[] = [];
     startTime: Date = new Date();
     lastUpdate = this.startTime.getTime();
-    reverieLoop: NodeJS.Timer;
+    emojilandLoop: NodeJS.Timer;
     timers: TimerManager = new TimerManager();
     getAverageTickTime() {
         let avg = 0;
@@ -48,25 +48,24 @@ export class Reverie {
 
     /**
      * Initialization constructor for application.
-     * @param config Optional configuration object for Reverie application.
+     * @param config Optional configuration object for Emojiland application.
      */
     constructor () {
-        if (!Reverie.instance) Reverie.instance = this;
+        if (!Emojiland.instance) Emojiland.instance = this;
 
         console.log(`
 =====================================================================
-ooooooooo.                                             o8o
- 888    Y88.                                            "
- 888   .d88'  .ooooo.  oooo    ooo  .ooooo.  oooo d8b oooo   .ooooo.
- 888ooo88P'  d88'  88b   88.  .8'  d88'  88b  888""8P  888  d88'  88b
- 888 88b.    888ooo888    88..8'   888ooo888  888      888  888ooo888
- 888   88b.  888    .o     888'    888    .o  888      888  888    .o
-o888o  o888o  Y8bod8P'      8'      Y8bod8P' d888b    o888o  Y8bod8P'
+                          __.__.__                     .___
+  ____   _____   ____    |__|__|  | _____    ____    __| _/
+_/ __ \\ /     \\ /  _ \\   |  |  |  | \\__  \\  /    \\  / __ |
+\\  ___/|  Y Y  (  <_> )  |  |  |  |__/ __ \\\|   |  \\/ /_/ |
+ \\___  >__|_|  /\\____/\\__|  |__|____(____  /___|  /\\____ |
+     \\/      \\/      \\______|            \\/     \\/      \\/
 =====================================================================
 (v${this.version.major}.${this.version.minor}.${this.version.patch})`);
         console.log('\n');
 
-        // create Reverie event channel
+        // create Emojiland event channel
         const events = this.events = new EventChannel();
 
         // create network and terminal modules
@@ -91,7 +90,7 @@ o888o  o888o  Y8bod8P'      8'      Y8bod8P' d888b    o888o  Y8bod8P'
     }
 
     /**
-     * Main Reverie application logic loop
+     * Main Emojiland application logic loop
      */
     private update() {
         // update times
@@ -115,20 +114,20 @@ o888o  o888o  Y8bod8P'      8'      Y8bod8P' d888b    o888o  Y8bod8P'
 
         // asynchronous loop
         if (this.isRunning) {
-            this.reverieLoop = setTimeout(() => this.update(), this.timePerTick);
+            this.emojilandLoop = setTimeout(() => this.update(), this.timePerTick);
         } else {
             // this.exit();
         }
     }
     /**
-     * Begins running the Reverie application loop.
+     * Begins running the Emojiland application loop.
      */
     run() {
         this.isRunning = true;
         this.update();
     }
     /**
-     * Pauses execution of Reverie application.
+     * Pauses execution of Emojiland application.
      */
     pause() {
         this.isRunning = false;
